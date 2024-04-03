@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.mainContainer {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+.background {
+  width: 45%;
+  height: 100%;
+}
+.contentMainContainer {
+  width: 55%;
+  height: 100%;
+}
+.alreadyContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 70px;
+  align-items: center;
+  width: 50vw;
+  margin-right: 80px;
+  gap: 5px;
+}
+.alreadyContainer p {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: right;
+  color: #8692a6;
+}
+.alreadyContainer a {
+  font-size: 24px;
+  cursor: pointer;
+  color: #1565d8;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  text-align: right;
+}
+.firstPageContentContainer {
+  display: flex;
+  margin: 135px 221px 0px 127px;
+
+  flex-direction: column;
+}
+.firstPageContentContainer h2 {
+  color: black;
+  font-family: Inter;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36.31px;
+  text-align: left;
+}
+.title {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  width: fit-content;
+  margin-top: 10px;
+  color: #8692a6;
+}
+.contentCardMainContainer {
+  border-radius: 6px;
+
+  box-shadow: 0px 2px 14px 1px #0000000f;
+  margin-top: 35px;
+  gap: 28px;
+}
+.contentCardMainContainer p {
+  color: #8692a6;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  text-align: left;
+}
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 52px;
+  margin-right: 28px;
+  height: 52px;
+}
+.polygon {
+  height: 52px;
+  width: 52px;
+}
+.relativeIcon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+.contentCardContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 28px 0px 28px 28px;
+
+  align-items: center;
+}
+.contentCardMainContainer:hover {
+  border: 1px solid #1565d8;
+  transition-duration: 0.2s;
+  .arrow-right {
+    display: flex;
+  }
+}
+.arrow-right {
+  margin-left: 35px;
+  display: none;
+}
+.text h3 {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.36px;
+  text-align: left;
+  margin-bottom: 4px;
+}
