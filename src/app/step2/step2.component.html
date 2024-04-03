@@ -4,3 +4,81 @@
   href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
   rel="stylesheet"
 />
+<div class="pageMainContainer">
+  <img class="background" src="../../assets/imgs/background.png" />
+  <div class="contentMainContainer">
+    <div class="topContainer">
+      <div class="backContainer">
+        <img class="arrow_back" src="../../assets/imgs/arrow_back.png" />
+        <a>Back</a>
+      </div>
+      <div class="stepContainer">
+        <p class="step">STEP 02/03</p>
+        <p class="personal">Residency Info.</p>
+      </div>
+    </div>
+    <div class="contentContainer">
+      <h1>Complete Your Profile!</h1>
+      <p class="title">
+        For the purpose of industry regulation, your <br />
+        details are required.
+      </p>
+      <!-- <hr /> -->
+      <div class="hrDiv"></div>
+      <form id="step2Form">
+        <div class="inputDiv">
+          <label>Phone number</label>
+          <div class="relativeDiv">
+            <img class="flag" src="../../assets/imgs/flag.png" />
+            <select
+              class="mobileNumSelect"
+              id="numbers"
+              name="numList"
+              form="step2Form"
+            >
+              <option value="234">+234</option>
+              <option value="995">+995</option>
+              <option value="235">+235</option>
+              <option value="733">+733</option>
+            </select>
+            <input
+              class="mobileNumInput"
+              type="number"
+              placeholder="090912345567"
+            />
+            <img class="check" src="../../assets/imgs/check.png" />
+          </div>
+        </div>
+        <div class="inputDiv">
+          <label>Your address</label>
+          <div class="relativeDiv">
+            <input type="text" placeholder="Please enter address" />
+            <img class="check" src="../../assets/imgs/check.png" />
+          </div>
+        </div>
+        <div class="inputDiv">
+          <label>Country of residence</label>
+          <!-- <div class="relativeDiv">
+          
+          </div> -->
+          <ng-select
+            [items]="countries"
+            bindLabel="name"
+            bindValue="code"
+            [clearable]="false"
+            placeholder="Please select"
+            class="ng-select"
+          >
+          </ng-select>
+        </div>
+
+        <button class="submitBtn" type="submit">Save & Continue</button>
+      </form>
+      <div class="safety">
+        <img src="../../assets/imgs/lock.png" />
+        <p>Your Info is safely secured</p>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+</div>

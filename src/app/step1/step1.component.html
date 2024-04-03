@@ -24,24 +24,38 @@
         details are required.
       </p>
       <hr />
-      <form>
+      <form [formGroup]="stepOneForm">
         <div class="inputDiv">
           <label> Your fullname* </label>
-          <input type="text" placeholder="Invictus Innocent" />
+          <div class="relativeDiv">
+            <input
+              formControlName="fullName"
+              type="text"
+              placeholder="Invictus Innocent"
+            />
+            <img class="check" src="../../assets/imgs/check.png" />
+          </div>
         </div>
         <div class="inputDiv">
           <label> Email address*</label>
-          <input type="email" placeholder="Enter email address" />
+          <div class="relativeDiv">
+            <input
+              formControlName="email"
+              type="email"
+              placeholder="Enter email address"
+            />
+            <img class="check" src="../../assets/imgs/check.png" />
+          </div>
         </div>
         <div class="inputDiv">
           <label> Create password* </label>
-          <div class="relativeDivForShowBtn">
+          <div class="relativeDiv">
             <input
               type="{{ showPassword ? 'text' : 'password' }}"
-              (ngModel)="(password)"
               placeholder="Enter Password"
               class="passInput"
             />
+            <img class="check passCheck" src="../../assets/imgs/check.png" />
             <button class="showBtn" (click)="togglePasswordVisibility($event)">
               {{ showPassword ? "Hide" : "Show" }}
             </button>

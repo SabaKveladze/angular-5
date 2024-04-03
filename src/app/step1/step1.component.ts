@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-step1',
@@ -8,13 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class Step1Component implements OnInit {
   password: string = '';
   showPassword: boolean = false;
-
+  stepOneForm: FormGroup;
   togglePasswordVisibility(event: Event) {
     event?.preventDefault();
     this.showPassword = !this.showPassword;
   }
 
-  constructor() {}
+  constructor(private fb: FormBuilder) {
+    this.stepOneForm = this.fb.group({
+      fullName: [''],
+      email: [''],
+    });
+  }
 
   ngOnInit(): void {}
 }
