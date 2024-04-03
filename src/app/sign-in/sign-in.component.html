@@ -1,0 +1,102 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+  rel="stylesheet"
+/>
+<div class="pageMainContainer">
+  <img class="background" src="../../assets/imgs/background.png" />
+  <div class="contentMainContainer">
+    <div class="topContainer">
+      <div class="backContainer">
+        <img class="arrow_back" src="../../assets/imgs/arrow_back.png" />
+        <a>Back</a>
+      </div>
+      <div class="stepContainer">
+        <p class="step">Sign In</p>
+        <p class="personal">Authentification</p>
+      </div>
+    </div>
+    <div class="contentContainer">
+      <h1>Sign In To Your Profile Your Profile!</h1>
+      <p class="title">
+        For the purpose of industry regulation, your <br />
+        details are required.
+      </p>
+      <!-- <hr /> -->
+      <div class="hrDiv"></div>
+      <form [formGroup]="signInForm" id="signIn">
+        <div class="inputDiv">
+          <label>Enter Your Email:</label>
+          <div class="relativeDiv">
+            <input
+              formControlName="email"
+              type="email"
+              placeholder="Enter Email"
+            />
+            <img class="check" src="../../assets/imgs/check.png" />
+          </div>
+        </div>
+        <div
+          class="error-container"
+          *ngIf="email?.invalid && (email?.touched || email?.dirty)"
+        >
+          <p
+            class="error"
+            *ngIf="email?.invalid &&  email?.errors?.['required']"
+          >
+            Email is required
+          </p>
+          <p class="error" *ngIf="email?.invalid &&  email?.errors?.['email']">
+            Email Format Is Invalid
+          </p>
+        </div>
+        <div class="inputDiv">
+          <label>Enter Your Password:</label>
+          <div class="relativeDiv">
+            <input
+              formControlName="password"
+              type="password"
+              placeholder="Enter Password"
+            />
+            <img class="check" src="../../assets/imgs/check.png" />
+          </div>
+        </div>
+        <div
+          class="error-container"
+          *ngIf="password?.invalid && (password?.touched || password?.dirty)"
+        >
+          <p
+            class="error"
+            *ngIf="password?.invalid &&  password?.errors?.['required']"
+          >
+            Password is required
+          </p>
+          <p
+            class="error"
+            *ngIf="password?.invalid &&  password?.errors?.['minlength']"
+          >
+            Password must be at least 6 character
+          </p>
+
+          <p
+            class="error"
+            *ngIf="password?.invalid &&  password?.errors?.['maxlength']"
+          >
+            Password must be max 15 character
+          </p>
+        </div>
+        <!-- <div class="relativeDiv">
+          
+          </div> -->
+
+        <button class="submitBtn" type="submit">Save & Continue</button>
+      </form>
+      <div class="safety">
+        <img src="../../assets/imgs/lock.png" />
+        <p>Your Info is safely secured</p>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+</div>

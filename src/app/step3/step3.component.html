@@ -25,20 +25,52 @@
       </p>
       <!-- <hr /> -->
       <div class="hrDiv"></div>
-      <form id="step2Form">
+      <form [formGroup]="stepThreeForm" id="step2Form">
         <div class="inputDiv">
           <label>Bank verification number (BVN)</label>
           <div class="relativeDiv">
-            <input type="text" placeholder="090912345567" />
+            <input
+              formControlName="bank"
+              type="text"
+              placeholder="090912345567"
+            />
             <img class="check" src="../../assets/imgs/check.png" />
           </div>
+        </div>
+        <div
+          class="error-container"
+          *ngIf="bank?.invalid && (bank?.touched || bank?.dirty)"
+        >
+          <p class="error" *ngIf="bank?.invalid &&  bank?.errors?.['required']">
+            Bank verification number (BVN) Is Required
+          </p>
+          <p
+            class="error"
+            *ngIf="bank?.invalid &&  bank?.errors?.['maxlength']"
+          >
+            Bank verification number (BVN) length should be exactly 12
+            characters
+          </p>
+          <p
+            class="error"
+            *ngIf="bank?.invalid &&  bank?.errors?.['minlength']"
+          >
+            Bank verification number (BVN) length should be exactly 12
+            characters
+          </p>
         </div>
 
         <!-- <div class="relativeDiv">
           
           </div> -->
 
-        <button class="submitBtn" type="submit">Save & Continue</button>
+        <button
+          [disabled]="!stepThreeForm.valid"
+          class="submitBtn"
+          type="submit"
+        >
+          Save & Continue
+        </button>
       </form>
       <div class="safety">
         <img src="../../assets/imgs/lock.png" />

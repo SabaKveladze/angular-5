@@ -126,7 +126,7 @@ input:hover {
   font-weight: 500;
   line-height: 19.36px;
   text-align: center;
-  width: calc(100% + 32px);
+  width: 100%;
   color: white;
   padding: 21.32px 0px;
   border-radius: 6px;
@@ -147,6 +147,7 @@ input:hover {
   height: 20px;
   position: absolute;
   right: 30px;
+  display: none;
 }
 .safety {
   display: flex;
@@ -170,4 +171,22 @@ input:hover {
   position: absolute;
 
   left: 30px;
+}
+.error {
+  color: red;
+  font-size: larger;
+  font-style: italic;
+}
+input.ng-valid {
+  border: 1px solid green;
+}
+input.ng-valid + .check {
+  display: flex;
+}
+input.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+.submitBtn:disabled,
+.submitBtn[disabled] {
+  background-color: rgb(134, 173, 185);
 }

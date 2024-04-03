@@ -25,7 +25,7 @@
       </p>
       <!-- <hr /> -->
       <div class="hrDiv"></div>
-      <form id="step2Form">
+      <form [formGroup]="stepTwoForm" id="step2Form">
         <div class="inputDiv">
           <label>Phone number</label>
           <div class="relativeDiv">
@@ -43,17 +43,70 @@
             </select>
             <input
               class="mobileNumInput"
-              type="number"
+              type="tel"
               placeholder="090912345567"
+              formControlName="mobilenom"
             />
             <img class="check" src="../../assets/imgs/check.png" />
+          </div>
+          <div
+            class="error-container"
+            *ngIf="
+              mobilenom?.invalid && (mobilenom?.touched || mobilenom?.dirty)
+            "
+          >
+            <p
+              class="error"
+              *ngIf="mobilenom?.invalid &&  mobilenom?.errors?.['required']"
+            >
+              Mobile No. Is Required
+            </p>
+            <p
+              class="error"
+              *ngIf="mobilenom?.invalid &&  mobilenom?.errors?.['maxlength']"
+            >
+              Mobile No. length should be exactly 12 characters
+            </p>
+            <p
+              class="error"
+              *ngIf="mobilenom?.invalid &&  mobilenom?.errors?.['minlength']"
+            >
+              Mobile No. length should be exactly 12 characters
+            </p>
           </div>
         </div>
         <div class="inputDiv">
           <label>Your address</label>
           <div class="relativeDiv">
-            <input type="text" placeholder="Please enter address" />
+            <input
+              formControlName="address"
+              type="text"
+              placeholder="Please enter address"
+            />
             <img class="check" src="../../assets/imgs/check.png" />
+          </div>
+          <div
+            class="error-container"
+            *ngIf="address?.invalid && (address?.touched || address?.dirty)"
+          >
+            <p
+              class="error"
+              *ngIf="address?.invalid &&  address?.errors?.['required']"
+            >
+              Address Is Required
+            </p>
+            <p
+              class="error"
+              *ngIf="address?.invalid &&  address?.errors?.['maxlength']"
+            >
+              Address length should be max 25 characters
+            </p>
+            <p
+              class="error"
+              *ngIf="address?.invalid &&  address?.errors?.['minlength']"
+            >
+              Address length should be at least 6 characters
+            </p>
           </div>
         </div>
         <div class="inputDiv">
@@ -68,11 +121,24 @@
             [clearable]="false"
             placeholder="Please select"
             class="ng-select"
+            formControlName="country"
           >
           </ng-select>
         </div>
+        <br />
+        <div
+          class="error-container"
+          *ngIf="country?.invalid && (country?.touched || country?.dirty)"
+        >
+          <p
+            class="error"
+            *ngIf="country?.invalid &&  country?.errors?.['required']"
+          >
+            Select Country
+          </p>
+        </div>
 
-        <button class="submitBtn" type="submit">Save & Continue</button>
+        <button [disabled]="!stepTwoForm.valid" class="submitBtn" type="submit">Save & Continue</button>
       </form>
       <div class="safety">
         <img src="../../assets/imgs/lock.png" />
