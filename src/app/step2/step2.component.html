@@ -10,7 +10,7 @@
     <div class="topContainer">
       <div class="backContainer">
         <img class="arrow_back" src="../../assets/imgs/arrow_back.png" />
-        <a>Back</a>
+        <a routerLink="/step1">Back</a>
       </div>
       <div class="stepContainer">
         <p class="step">STEP 02/03</p>
@@ -138,7 +138,7 @@
           </p>
         </div>
 
-        <button [disabled]="!stepTwoForm.valid" class="submitBtn" type="submit">Save & Continue</button>
+        <button routerLink="/step3" [disabled]="!stepTwoForm.valid" class="submitBtn" type="submit">Save & Continue</button>
       </form>
       <div class="safety">
         <img src="../../assets/imgs/lock.png" />

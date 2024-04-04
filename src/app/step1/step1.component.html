@@ -10,7 +10,7 @@
     <div class="topContainer">
       <div class="backContainer">
         <img class="arrow_back" src="../../assets/imgs/arrow_back.png" />
-        <a>Back</a>
+        <a routerLink="/firstPage">Back</a>
       </div>
       <div class="stepContainer">
         <p class="step">STEP 01/03</p>
@@ -29,6 +29,7 @@
           <label> Your fullname* </label>
           <div class="relativeDiv">
             <input
+            id="fullname"
               formControlName="fullName"
               type="text"
               placeholder="Invictus Innocent"
@@ -76,25 +77,20 @@
             <img class="check" src="../../assets/imgs/check.png" />
           </div>
         </div>
-           <div
-            class="error-container"
-            *ngIf="email?.invalid && (email?.touched || email?.dirty)"
+        <div
+          class="error-container"
+          *ngIf="email?.invalid && (email?.touched || email?.dirty)"
+        >
+          <p
+            class="error"
+            *ngIf="email?.invalid &&  email?.errors?.['required']"
           >
-            <p
-              class="error"
-              *ngIf="email?.invalid &&  email?.errors?.['required']"
-            >
-             Email is required
-            </p>
-            <p
-              class="error"
-              *ngIf="email?.invalid &&  email?.errors?.['email']"
-            >
-             Email Format Is Invalid
-            </p>
-
-            
-            </div>
+            Email is required
+          </p>
+          <p class="error" *ngIf="email?.invalid &&  email?.errors?.['email']">
+            Email Format Is Invalid
+          </p>
+        </div>
         <div class="inputDiv">
           <label> Create password* </label>
           <div class="relativeDiv">
@@ -149,6 +145,7 @@
           (click)="onSubmitBtn()"
           class="submitBtn"
           type="submit"
+          routerLink="/step2"
         >
           Register Account
         </button>

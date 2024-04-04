@@ -55,5 +55,9 @@ export class Step1Component implements OnInit {
     return this.stepOneForm.get('password');
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // localStorage.setItem('fullname', this.stepOneForm.get('fullname')?.value);
+    // document.getElementById('fullname').innerHTML =
+    //   localStorage.getItem('fullname');
+  }
 }
